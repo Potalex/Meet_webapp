@@ -13,7 +13,7 @@ MarkupSafe
 packaging
 psycopg2
 pyparsing
-six
+six==1.10.0
 static3
 Werkzeug
 whitenoise
