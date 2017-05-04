@@ -9,5 +9,7 @@ argparse==1.2.1
 six==1.5.2
 wheel==0.24.0
 whitenoise==3.3.0
+markdown
 gunicorn 
 psycopg2
+bootsrap_admin
