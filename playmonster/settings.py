@@ -25,7 +25,8 @@ SECRET_KEY = '$klqln!ht83oc_ht3mzk*lavc++=_2jpfy9j2+rva=(%62h=ae'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ALLOWED_HOSTS = ['playmonster-alexli0717.c9users.io']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
@@ -54,10 +55,12 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'playmonster.urls'
 
+TEMPLATES_PATH = os.path.join(BASE_DIR, 'templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_PATH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
