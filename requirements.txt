@@ -6,7 +6,6 @@ bootstrap-admin==0.3.7.1
 SecretStorage==2.0.0
 appdirs==1.4.3
 argparse==1.2.1
-pyparsing==2.0.1
 six==1.5.2
 wheel==0.24.0
 whitenoise==3.3.0
