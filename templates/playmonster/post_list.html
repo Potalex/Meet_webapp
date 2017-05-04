@@ -4,7 +4,13 @@
     <title>Play Master</title>
   </head>
   <body>
-    
+    <div class="posts">
+    {% for post in posts %}
+      <p>活动时间：{{post.activateDate}}</p>
+      <h1>{{post}}</h1>
+      <p>{{post.content}}</p> 
+    {% endfor %}
+    </div>
   </body>
   <footer></footer>
 </html>

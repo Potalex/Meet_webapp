@@ -10,6 +10,7 @@ class Activity(models.Model):
   title = models.CharField(max_length=200)
   createdDate = models.DateTimeField(default=timezone.now)
   activateDate = models.DateTimeField(blank=True, null=True)
+  content = models.TextField(blank = True, null = True) 
   
   def publish(self):
     self.activateDate = timezone.now
