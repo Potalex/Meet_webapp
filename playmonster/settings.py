@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import markdown
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,6 +34,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Application definition
 
 INSTALLED_APPS = [
+    'bootsrap_admin',
+    'markdown',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'playmaster',
 ]
+
+from django.conf import global_settings
+
+BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
