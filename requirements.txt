@@ -6,7 +6,6 @@ dj-static
 Django
 Flask
 gunicorn
-MarkupSafe
 packaging
 psycopg2
 pyparsing
