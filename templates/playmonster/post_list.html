@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Play Master</title>
-  </head>
-  <body>
-    <div class="posts">
-    {% for post in posts %}
-      <p>活动时间：{{post.activateDate}}</p>
-      <h1>{{post}}</h1>
-      <p>{{post.content}}</p> 
-    {% endfor %}
-    </div>
-  </body>
-  <footer></footer>
-</html>
+{% extends 'playmonster/base.html' %}
+
+{% block content %}
+{% for post in posts %}
+<div class="post">
+  <div class="date">
+    {{ post.activateDate }}
+  </div>
+  <h1><a href="">{{ post.title }}</a></h1>
+  <p>{{ post.content|linebreaksbr }}</p>
+</div>
+{% endfor %}
+{% endblock content %}
