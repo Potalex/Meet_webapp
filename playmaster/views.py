@@ -27,3 +27,16 @@ def act_new(request):
     form = ActForm()
   return render(request, 'playmonster/act_edit.html', {'form': form})
   
+def act_edit(request,pk):
+  act = get_object_or_404(Activity, pk=pk)
+  if request.method == "POST":
+    form = ActForm(request.POST,instance=act)
+    if form.is_valid():
+      act = form.save(commit=False)
+      act.author = request.user
+      act.publishedDate = timezone.now()
+      act.save()
+      return redirect('act_detail',pk=act.pk)
+  else:
+    form = ActForm(instance=act)
+  return render(request, 'playmonster/act_edit.html', {'form':form})
