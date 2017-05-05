@@ -11,4 +11,3 @@ wheel==0.24.0
 whitenoise==3.3.0
 gunicorn 
 psycopg2
-bootsrap_admin==0.3.7.1
