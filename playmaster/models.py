@@ -13,7 +13,7 @@ class Activity(models.Model):
   content = models.TextField(blank = True, null = True) 
   
   def publish(self):
-    self.activateDate = timezone.now
+    self.createdDate = timezone.now
     self.save()
     
   def __str__(self):
