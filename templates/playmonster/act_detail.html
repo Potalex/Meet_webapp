@@ -1,15 +1,17 @@
 {% extends 'playmonster/base.html' %}
 
 {% block content %}
+<div class="container">
 <div class="post">
     {% if act.createdDate %}
-<div class="date">
-    发布时间：{{ act.createdDate }}
-    活动时间：{{ act.activateDate }}
-</div>
+        <div class="date">
+            发布时间：{{ act.createdDate }}
+            活动时间：{{ act.activateDate }}
+            <a class="editBtn btn btn-default" href="{% url 'act_edit' pk=act.pk %}"><span class="pull-right glyphicon glyphicon-pencil"></span></a>
+        </div>
     {% endif %}
-    <a class="btn btn-default" href="{% url 'act_edit' pk=act.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     <h1>{{ act.title }}</h1>
     <p>{{ act.content|linebreaksbr }}</p>
+</div>
 </div>
 {% endblock content %}
