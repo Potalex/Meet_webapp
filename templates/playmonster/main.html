@@ -5,6 +5,7 @@
 <div class="post row">
   <div class="date">
     活动时间：{{ act.activateDate }}
+    发布时间：{{ act.publishDate }}
   </div>
   <h1><a href="{% url 'act_detail' pk=act.pk %}">{{ act.title }}</a></h1>
   <p>{{ act.content|linebreaksbr }}</p>

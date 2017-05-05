@@ -20,6 +20,7 @@ def act_new(request):
     if form.is_valid():
       act = form.save(commit=False)
       act.author = request.user
+      act.activateDate = timezone.now()
       act.publishedDate = timezone.now()
       act.save()
       return redirect('act_detail', pk=act.pk)
@@ -34,6 +35,7 @@ def act_edit(request,pk):
     if form.is_valid():
       act = form.save(commit=False)
       act.author = request.user
+      act.activateDate = timezone.now()
       act.publishedDate = timezone.now()
       act.save()
       return redirect('act_detail',pk=act.pk)
