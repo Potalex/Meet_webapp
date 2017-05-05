@@ -3,7 +3,7 @@ from django.utils import timezone
 from .models import Activity
 from .forms import ActForm
 from django.shortcuts import redirect
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger 
+from django.core.urlresolvers import reverse
 # Create your views here.
 
 def main(request):
@@ -40,3 +40,8 @@ def act_edit(request,pk):
   else:
     form = ActForm(instance=act)
   return render(request, 'playmonster/act_edit.html', {'form':form})
+  
+def act_delete(request,pk):
+  act = get_object_or_404(Activity, pk=pk).delete()
+  return redirect(reverse('main'))
+  
