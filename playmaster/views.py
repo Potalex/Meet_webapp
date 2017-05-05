@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 # Create your views here.
 
 def main(request):
-  acts = Activity.objects.filter(activateDate__lte=timezone.now()).order_by('createdDate')
+  acts = Activity.objects.filter(activateDate__lte=timezone.now()).order_by('-activateDate')
   return render(request,'playmonster/main.html',{'acts':acts})
   
 def act_detail(request,pk):
