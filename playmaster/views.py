@@ -3,11 +3,20 @@ from django.utils import timezone
 from .models import Activity
 from .forms import ActForm
 from django.shortcuts import redirect
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger 
 # Create your views here.
 
 def main(request):
-  acts = Activity.objects.filter(activateDate__lte=timezone.now()).order_by('createdDate')
+  #acts = Activity.objects.filter(activateDate__lte=timezone.now()).order_by('createdDate')
+  acts = Activity.objects.all()
+  paginator = Paginator(acts,5)
+  page = request.GET.get('page')
+  try:
+    acts = paginator.page(page)
+  except PageNotAnInteger:
+    acts = paginator.page(1)
+  except EmptyPage:
+    acts = paginator.paginator(paginator.num_pages)
   return render(request,'playmonster/main.html',{'acts':acts})
   
 def act_detail(request,pk):

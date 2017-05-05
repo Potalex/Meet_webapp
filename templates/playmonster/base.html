@@ -22,9 +22,11 @@
           <div>
             <div class="collapse navbar-collapse navbar-right" id="myNavbar">
               <ul class="nav navbar-nav">
-                <li><a href="https://playmaster.herokuapp.com/#Activity">Activity</a></li>
+                <li><a href="{% url 'main' %}">Activity</a></li>
                 <li><a href="#contact">Contact</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'act_new' %}">New <span class="glyphicon glyphicon-plus"></span></a></li>
+                {% endif %}
               </ul>
             </div>
           </div>
