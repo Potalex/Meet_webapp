@@ -2,12 +2,13 @@
 
 {% block content %}
 <div class="post">
-    {% if act.published_date %}
+    {% if act.createdDate %}
 <div class="date">
-    {{ act.published_date }}
+    发布时间：{{ act.createdDate }}
+    活动时间：{{act.activateDate}}
 </div>
     {% endif %}
     <h1>{{ act.title }}</h1>
-    <p>{{ act.text|linebreaksbr }}</p>
+    <p>{{ act.content|linebreaksbr }}</p>
 </div>
 {% endblock content %}
