@@ -9,7 +9,7 @@ class Activity(models.Model):
   author = models.ForeignKey('auth.User')
   title = models.CharField(max_length=200)
   createdDate = models.DateTimeField(default=timezone.now)
-  activateDate = models.DateTimeField(blank=True, null=True)
+  activateDate = models.DateTimeField(blank=True, null=True,default=timezone.now)
   content = models.TextField(blank = True, null = True) 
   
   def publish(self):
