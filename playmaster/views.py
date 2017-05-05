@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 # Create your views here.
 
 def main(request):
-  acts = Activity.objects.filter(activateDate__lte=timezone.now()).order_by('activateDate')
+  acts = Activity.objects.filter(activateDate__lte=timezone.now()).order_by('publishedDate')
   return render(request,'playmonster/main.html',{'acts':acts})
   
 def act_detail(request,pk):
