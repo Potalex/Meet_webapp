@@ -19,7 +19,7 @@ def act_new(request):
     form = ActForm(request.POST)
     if form.is_valid():
       act = form.save(commit=False)
-      act.author = request.user
+      #act.author = request.user
       act.publishedDate = timezone.now()
       act.save()
       return redirect('act_detail', pk=act.pk)
