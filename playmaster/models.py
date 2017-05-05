@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.utils import timezone
-
+from django.contrib import admin
 
 # Create your models here.
 class Activity(models.Model):
@@ -18,3 +18,17 @@ class Activity(models.Model):
     
   def __str__(self):
     return self.title
+    
+class MsgPost(models.Model):
+    user = models.CharField(max_length=12)
+    email = models.EmailField(blank=True)
+    title = models.CharField(max_length=30)
+    content = models.TextField()
+    datetime = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ['-datetime']
+        
+class MsgPostAdmin(admin.ModelAdmin):
+    list_display = ('title','datetime','user')
+    
+admin.site.register(MsgPost, MsgPostAdmin)
