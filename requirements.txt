@@ -6,7 +6,7 @@ bootstrap-admin==0.3.7.1
 SecretStorage==2.0.0
 appdirs==1.4.3
 argparse==1.2.1
-six==1.5.2
+six==1.6.0
 wheel==0.24.0
 whitenoise==3.3.0
 markdown
